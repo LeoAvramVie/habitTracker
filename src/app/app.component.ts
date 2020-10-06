@@ -43,6 +43,7 @@ export class AppComponent {
 
     this.editing = false;
     this.adding = false;
+    this.exitForm();
   }
 
   public setEditForm(habit: Habit, index: number) {
@@ -57,5 +58,10 @@ export class AppComponent {
 
   public onDelete(index: number) {
     this.habits.splice(index, 1);
+  }
+  exitForm() {
+    this.adding = false;
+    this.editing = false;
+    this.habitForm.reset();
   }
 }
